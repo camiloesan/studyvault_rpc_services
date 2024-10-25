@@ -49,10 +49,10 @@ async fn upload_file(
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let mut client = FileServiceClient::connect("http://[::1]:50051").await?;
+    let mut client = FileServiceClient::connect("http://0.0.0.0:50051").await?;
     upload_file(
         &mut client,
-        "/home/camilo/Documents/kokoro.pdf",
+        "/Users/camiloespejo/Downloads/thefirefromwithin.pdf",
         1,
         "testfromclient".to_string(),
         "testfromclient".to_string(),

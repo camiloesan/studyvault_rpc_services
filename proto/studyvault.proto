@@ -3,6 +3,7 @@ package studyvault;
 
 service FileService {
     rpc UploadFile (stream FileChunk) returns (UploadStatus);
+  //  rpc DownloadFile (UploadStatus) returns (stream FileData);
 }
 
 message FileChunk {
@@ -12,6 +13,11 @@ message FileChunk {
     string title = 4;
     string description = 5;
 }
+
+//message FileData {
+  //  bytes content = 1;
+    //string filename = 2;
+//}
 
 message UploadStatus {
     bool success = 1;

@@ -19,6 +19,7 @@ impl FileService for FileServiceProt {
         &self,
         request: Request<tonic::Streaming<FileChunk>>,
     ) -> Result<Response<UploadStatus>, Status> {
+        println!("requested");
         let mut stream = request.into_inner();
         let mut file = None;
 
