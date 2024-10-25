@@ -1,0 +1,19 @@
+syntax = "proto3";
+package studyvault;
+
+service FileService {
+    rpc UploadFile (stream FileChunk) returns (UploadStatus);
+}
+
+message FileChunk {
+    bytes content = 1;
+    string filename = 2;
+    uint32 channel_id = 3;
+    string title = 4;
+    string description = 5;
+}
+
+message UploadStatus {
+    bool success = 1;
+    string message = 2;
+}
